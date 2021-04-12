@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.options('*', cors());
 //app.use(bodyParser.json()); // body en formato json
-//app.use(bodyParser.urlencoded({ extended: false })); //body formulario
+//app.use(bodyParser.urlencoded({ extended: false })); //bodys formulario
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
