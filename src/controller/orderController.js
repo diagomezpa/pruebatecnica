@@ -32,8 +32,9 @@ class OrderController {
         const { id } = req.params;
         console.log("llsabasd hasdf jassdnf aka df " + id);
         const lista2 = await pool.query('SELECT * FROM orders_has_product WHERE orderid= ? ', [id]);
-        const lista = await pool.query('SELECT * FROM product WHERE id= ?', [lista2]);
-        res.json(lista2);
+        console.log("listas " + lista2);
+        //const lista = await pool.query('SELECT * FROM product WHERE id= ?', [lista2]);
+        res.json(lista2[0]);
 
     }
 
