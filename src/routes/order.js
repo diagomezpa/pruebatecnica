@@ -8,8 +8,10 @@ router.get('/',
 );
 router.post('/', orderController.create);
 router.post('/ordenadd', orderController.agregarproducto);
-
-
+router.get('/orderuser/id', orderController.ordersbyUser);
+router.put('/id', orderController.update);
+router.delete('/id', orderController.delete);
+router.get('/orderuser/id', orderController.producsbyorder);
 
 
 module.exports = router;

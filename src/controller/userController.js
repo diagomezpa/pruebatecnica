@@ -22,17 +22,18 @@ class UserController {
         if (games.length > 0) {
             return res.json(games[0]);
         }
-        res.status(404).json({ text: "The game doesn't exits" });
+        res.status(404).json({ text: "The gamed" });
     }
 
     async getbyid(req, res) {
         const { id } = req.params;
-        const games = await pool.query('SELECT * FROM users WHERE email = ?', [id]);
-        console.log(games.length);
+        const games = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
+        console.log("pruebas de getid")
+        console.log(id);
         if (games.length > 0) {
             return res.json(games[0]);
         }
-        res.status(404).json({ text: "The game doesn't exits" });
+        res.status(404).json({ text: "The game doesn't exibvxcvzxcvts" });
     }
 
     async create(req, res) {

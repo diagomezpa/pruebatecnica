@@ -6,13 +6,14 @@ const userController = require('../controller/userController');
 router.get('/',
     userController.list
 );
-router.get('/:email',
+router.get('/useremail/:email',
     userController.getbyemail
 );
 
 router.get('/:id',
     userController.getbyid
 );
+
 router.put('/:email', userController.update);
 router.post('/', userController.create);
 
