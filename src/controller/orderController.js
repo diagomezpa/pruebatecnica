@@ -14,10 +14,13 @@ class OrderController {
 
     // ordenes por usuario
     async ordersbyUser(req, res) {
-        const { iduser } = req.params;
-        const lista = await pool.query('SELECT * FROM orders WHERE userid= ?', [iduser]);
 
-        res.json(iduser);
+        const { id } = req.params;
+        console.log("pruebas " + id);
+        const lista = await pool.query('SELECT * FROM orders WHERE userid = ?', [id]);
+
+        console.log("pruebas");
+        res.json(lista);
 
     }
 
@@ -26,11 +29,11 @@ class OrderController {
     //productos de la orden
 
     async producsbyorder(req, res) {
-        const { idorder } = req.params;
-
-        const lista2 = await pool.query('SELECT productid FROM orders_has_product WHERE orderid= ? ', [idorder]);
+        const { id } = req.params;
+        console.log("llsabasd hasdf jassdnf aka df " + id);
+        const lista2 = await pool.query('SELECT * FROM orders_has_product WHERE orderid= ? ', [id]);
         const lista = await pool.query('SELECT * FROM product WHERE id= ?', [lista2]);
-        res.json(lista);
+        res.json(lista2);
 
     }
 

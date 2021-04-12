@@ -6,12 +6,12 @@ const orderController = require('../controller/orderController');
 router.get('/',
     orderController.list
 );
-router.post('/', orderController.create);
-router.post('/ordenadd', orderController.agregarproducto);
-router.get('/orderuser/id', orderController.ordersbyUser);
-router.put('/id', orderController.update);
-router.delete('/id', orderController.delete);
-router.get('/orderuser/id', orderController.producsbyorder);
+router.post('/', orderController.create); //listo
+router.post('/ordenadd', orderController.agregarproducto); //listo 
+router.get('/orderbyuser/:id', orderController.ordersbyUser); //listo
+router.put('/:id', orderController.update); //listo 
+router.delete('/:id', orderController.delete);
+router.get('/productbyorder/:id', orderController.producsbyorder);
 
 
 module.exports = router;
