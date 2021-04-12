@@ -1,4 +1,4 @@
-const pool = require('/home/diego/Escritorio/proyectospersonales/prueba-tecnica/src/database.js');
+const pool = require('../database');
 const express = require('express');
 
 const req = express.response;
@@ -49,8 +49,6 @@ class UserController {
         await pool.query('UPDATE users set ? WHERE email = ?', [req.body, email]);
         res.json({ message: "The producto was Updated" });
     }
-
-
 
 }
 

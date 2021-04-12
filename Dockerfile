@@ -2,12 +2,16 @@ FROM node:14
 
 WORKDIR /app
 
-COPY /app/package.json .
+COPY . ./
+
+COPY ["package.json", "./" ] 
+
+COPY ["package-lock.json", "./" ] 
 
 RUN npm install
 
-COPY /app .
+#COPY /app .
 
-EXPOSE 3000
+EXPOSE 4000
 
-CMD [ "npm", "start" ]
+CMD ["npm", "run", "dev"]

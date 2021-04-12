@@ -1,4 +1,4 @@
-const pool = require('/home/diego/Escritorio/proyectospersonales/prueba-tecnica/src/database.js');
+const pool = require('../database');
 const express = require('express');
 
 const req = express.response;
