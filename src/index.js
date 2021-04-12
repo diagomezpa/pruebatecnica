@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 var bodyParser = require('body-parser');
+var cors = require("cors")
 
 
 //initializations
@@ -11,6 +12,9 @@ app.set('port', 4000);
 
 //Middlewares
 app.use(morgan('dev'));
+
+app.use(cors());
+app.options('*', cors());
 //app.use(bodyParser.json()); // body en formato json
 //app.use(bodyParser.urlencoded({ extended: false })); //body formulario
 
