@@ -16,6 +16,4 @@ router.delete('/:id', producController.delete);
 
 
 
-
-
 module.exports = router;

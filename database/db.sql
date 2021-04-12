@@ -33,7 +33,8 @@ CREATE TABLE orders_has_product(
     productid INT(11) NOT NULL,
     units INT(11) NOT NULL,
     CONSTRAINT fk_ordenes_has_productos_productos1 FOREIGN KEY (productid) REFERENCES product(id),
-    UNIQUE(orderid,productid)
+    CONSTRAINT fk_ordenes_has_productos_order1 FOREIGN KEY (orderid) REFERENCES orders(id)
+   
 
 );
 

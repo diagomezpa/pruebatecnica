@@ -3,7 +3,7 @@ const express = require('express');
 
 const req = express.response;
 
-class ProductoController {
+class OrderController {
 
     async list(req, res) {
         //res.send('Helooesdeproducnto');
@@ -39,13 +39,15 @@ class ProductoController {
 
     async create(req, res) {
         console.log(req.body);
-        await pool.query('INSERT INTO product set ?', [req.body]);
-        res.json({ text: 'creando producto' });
+        await pool.query('INSERT INTO orders set ?', [req.body]);
+        res.json({ text: 'creando orders' });
     }
 
-    async agregarproducto() {
+    async agregarproducto(req, res) {
+        console.log("agregando producn");
 
         await pool.query('INSERT INTO orders_has_product set ?', [req.body]);
+        res.json({ text: 'creando orders' });
 
     }
 
@@ -67,4 +69,4 @@ class ProductoController {
 }
 
 //export const ProductoController = new ProductoController();
-module.exports = new ProductoController();
+module.exports = new OrderController();

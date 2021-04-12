@@ -7,6 +7,7 @@ router.get('/',
     orderController.list
 );
 router.post('/', orderController.create);
+router.post('/ordenadd', orderController.agregarproducto);
 
 
 
