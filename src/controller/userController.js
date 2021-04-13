@@ -17,8 +17,9 @@ class UserController {
 
     async getbyemail(req, res) {
         const { email } = req.params;
+        console.log("idff " + email);
         const games = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
-        console.log(games.length);
+        console.log(games);
         if (games.length > 0) {
             return res.json(games[0]);
         }
